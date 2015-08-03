@@ -63,7 +63,7 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .comment {
-  color: @light-gray;
+  color: @syntax-comments-color;
 }
 
 .entity {
@@ -141,7 +141,6 @@ atom-text-editor .search-results .marker.current-result .region,
 .string {
   color: @green;
 
-
   &.regexp {
     color: @cyan;
 
@@ -165,6 +164,7 @@ atom-text-editor .search-results .marker.current-result .region,
     &.variable,
     &.parameters,
     &.array {
+      /* color: @syntax-text-color; */
       color: @light-gray;
     }
 
