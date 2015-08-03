@@ -1,11 +1,6 @@
 @import "syntax-variables";
 
-.editor-colors {
-  background-color: @syntax-background-color;
-  color: @syntax-text-color;
-}
-
-.editor {
+atom-text-editor, :host {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
 
@@ -56,17 +51,19 @@
   }
 }
 
-.editor .search-results .marker .region {
+atom-text-editor .search-results .marker .region,
+:host .search-results .marker .region {
   background-color: transparent;
   border: 1px solid @syntax-result-marker-color;
 }
 
-.editor .search-results .marker.current-result .region {
+atom-text-editor .search-results .marker.current-result .region,
+:host .search-results .marker.current-result .region {
   border: 1px solid @syntax-result-marker-color-selected;
 }
 
 .comment {
-  color: @syntax-comments-color;
+  color: @light-gray;
 }
 
 .entity {
@@ -115,7 +112,7 @@
     color: @orange;
   }
 
-  &.other.or {
+  &.other.color {
     color: @cyan;
   }
 
@@ -144,6 +141,7 @@
 .string {
   color: @green;
 
+
   &.regexp {
     color: @cyan;
 
@@ -167,7 +165,6 @@
     &.variable,
     &.parameters,
     &.array {
-      /* color: @syntax-text-color; */
       color: @light-gray;
     }
 
@@ -178,7 +175,7 @@
 
     &.bold {
       color: @light-orange;
-      font-style: bold;
+      font-weight: bold;
     }
 
     &.italic {
@@ -265,7 +262,7 @@
 .markup {
   &.bold {
     color: @orange;
-    font-style: bold;
+    font-weight: bold;
   }
 
   &.changed {
@@ -310,6 +307,7 @@
   }
 }
 
-.editor.mini .scroll-view {
+atom-text-editor[mini] .scroll-view,
+:host([mini]) .scroll-view {
   padding-left: 1px;
 }
